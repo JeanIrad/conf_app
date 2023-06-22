@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Speaker</title>
+</head>
+<body>
+ <h1>Add New Speaker</h1> 
+ <form action="{% url 'speakers:create' %}" method="post">
+    {% csrf_token%}
+    {{ name }}
+    <input type="submit">
+ </form>  
+ <a href="{% url 'speakers:index' %}"> Back to speakers</a>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- {% load static %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: aqua;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Speakers</h1>
+    <div>
+        <ul>
+            {% for speaker in speakers %}
+            <li>{{ speaker }}</li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    <a href="{% url 'speakers:create' %}">create a speaker</a>
+    <a href="{% url 'speakers:update' %}">Update the Lists</a>
+    <a href="{% url 'speakers:delete' %}">Delete the speakers</a>
+    
+</body>
+</html>
